@@ -87,7 +87,7 @@ function printInvoice(req, res) {
 
         // Store locally for future analysis
         var today = new Date();
-        var id = 'invoice_' + today.toLocaleString().replace(/ /, '_') + '.json';
+        var id = 'invoice_' + today.toLocaleString().replace(/\//g, '-').replace(/ /g, '_') + '.json';
         var filepath = LOCAL_STORAGE_PATH + '/' + id;
         var toBeStored = Object.assign(json);
 
