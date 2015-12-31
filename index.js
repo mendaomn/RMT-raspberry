@@ -8,6 +8,7 @@
 // Requires
 var https = require('https');
 var fs = require('fs');
+var jsonfile = require('jsonfile');
 var express = require('express');
 var bodyParser = require('body-parser');
 var jade = require('jade');
@@ -19,6 +20,7 @@ var ORDER_TEMPLATE_PATH = __dirname + '/server/templates/order.jade';
 var INVOICE_TEMPLATE_PATH = __dirname + '/server/templates/invoice.jade';
 var ORDERS_RENDERED_PATH = __dirname + '/server/orders';
 var INVOICES_RENDERED_PATH = __dirname + '/server/invoices';
+var LOCAL_STORAGE_PATH = __dirname + '/server/storage';
 var KEYS_PATH = __dirname + '/server/keys';
 
 
@@ -66,9 +68,8 @@ function printOrder(req, res) {
         // celebrate!
         res.type('text/plain');
         res.send('Well done bro!');
-    }
-    catch(err){
-    	console.log("Something went wrong:", err);
+    } catch (err) {
+        console.log("Something went wrong:", err);
     }
 }
 
@@ -83,11 +84,23 @@ function printInvoice(req, res) {
         // (html, path, callback) => generates a pdf from the HTML, saves it in path, call callback(filename)
         // as a callback, we print to default printer
         pdf.run(html, INVOICES_RENDERED_PATH, pdfPrinter.print);
+
+        // Store locally for future analysis
+        var today = new Date();
+        var id = 'invoice_' + today.toLocaleString().replace(/ /, '_') + '.json';
+        var filepath = LOCAL_STORAGE_PATH + '/' + id;
+        var toBeStored = Object.assign(json);
+
+        toBeStored.date = today.toLocaleString();
+
+        jsonfile.writeFile(filepath, toBeStored, function(err) {
+            console.error(err);
+        });
+
         // celebrate!
         res.type('text/plain');
         res.send('Well done bro!');
-    }
-    catch(err){
+    } catch (err) {
         console.log("Something went wrong:", err);
     }
 }
