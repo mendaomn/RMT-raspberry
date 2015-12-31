@@ -12,6 +12,8 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
     "jade": "^1.11.0",
+    "jsonfile": "^2.2.3",
+    "phantom": "^0.8.4",
     "printer": "^0.2.1"
   }
 }
