@@ -16,11 +16,12 @@ exports.run = function(html, path, callback) {
         ph.createPage(function(page) {
         	// Page config
             page.set('paperSize', {
-                width: '3cm',
+                width: '6cm',
                 height: '7cm',
                 margin: {
                     top: '15px',
-                    left: '10px'
+                    left: '10px',
+                    right: '10px'
                 }
             });
             page.set('content', html);

@@ -16,13 +16,16 @@ var pdfPrinter = require(__dirname + '/server/js/PDFprinter');
 
 // Config
 var ORDER_TEMPLATE_PATH = __dirname + '/server/templates/order.jade';
+var INVOICE_TEMPLATE_PATH = __dirname + '/server/templates/invoice.jade';
 var ORDERS_RENDERED_PATH = __dirname + '/server/orders';
+var INVOICES_RENDERED_PATH = __dirname + '/server/invoices';
 var KEYS_PATH = __dirname + '/server/keys';
 
 
 // Init
 var app = express();
 var renderOrder = jade.compileFile(ORDER_TEMPLATE_PATH);
+var renderInvoice = jade.compileFile(INVOICE_TEMPLATE_PATH);
 
 
 var credentials = {
@@ -39,6 +42,7 @@ app.use(bodyParser.json()); // to support JSON-encoded bodies
 
 // Register services
 app.post('/printOrder', printOrder);
+app.post('/printInvoice', printInvoice);
 
 // Listen on provided PORT, fallback to port 55555
 // app.listen(process.env.PORT || 3000);
@@ -65,6 +69,26 @@ function printOrder(req, res) {
     }
     catch(err){
     	console.log("Something went wrong:", err);
+    }
+}
+
+// SERVICE: /printInvoice
+function printInvoice(req, res) {
+    var json = req.body; // fetch incoming JSON
+    console.log("Ready to print the following invoice:");
+    console.log(json);
+    try {
+        var html = renderInvoice(json); // render template
+
+        // (html, path, callback) => generates a pdf from the HTML, saves it in path, call callback(filename)
+        // as a callback, we print to default printer
+        pdf.run(html, INVOICES_RENDERED_PATH, pdfPrinter.print);
+        // celebrate!
+        res.type('text/plain');
+        res.send('Well done bro!');
+    }
+    catch(err){
+        console.log("Something went wrong:", err);
     }
 }
 

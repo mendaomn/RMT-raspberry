@@ -58,19 +58,19 @@ initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- SERVICE WORKER -->
-    // <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js', {
-                scope: '/'
-            })
-            .then(function(registration) {
-                console.log("Service Worker Registered");
-            });
+    <script>
+    // if ('serviceWorker' in navigator) {
+    //     navigator.serviceWorker.register('/sw.js', {
+    //             scope: '/'
+    //         })
+    //         .then(function(registration) {
+    //             console.log("Service Worker Registered");
+    //         });
 
-        navigator.serviceWorker.ready.then(function(registration) {
-            console.log("Service Worker Ready");
-        });
-    }
+    //     navigator.serviceWorker.ready.then(function(registration) {
+    //         console.log("Service Worker Ready");
+    //     });
+    // }
     </script>
 </body>
 

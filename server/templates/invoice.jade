@@ -1,0 +1,12 @@
+html
+	body(style="width:6cm; font-size: 8px;")
+		h2 La Cantinetta Reale
+		h2 Tavolo #{table}
+		ul(style="list-style:none; margin:0; padding:0;")
+			each item in order
+				li
+					span= item.quantity + "x " + item.food.name
+					span(style="float: right;")= item.food.price + "€"
+				li(style="text-transform: uppercase; font-size: 6px")= item.note
+		div(style="clear: both;")
+		div(style="float: right;") Totale #{total} €

@@ -1,0 +1,13 @@
+[{
+    "name": "Sala 1", 	
+    "tables": 8,		
+    "prefix": "0"		
+}, {
+    "name": "Sala 2",
+    "tables": 4,
+    "prefix": "0"
+}, {
+    "name": "Sala 3",
+    "tables": 7,
+    "prefix": "0"
+}]
