@@ -5,9 +5,9 @@
 }, {
     "name": "Sala 2",
     "tables": 4,
-    "prefix": "0"
+    "prefix": "1"
 }, {
     "name": "Sala 3",
     "tables": 7,
-    "prefix": "0"
+    "prefix": "2"
 }]

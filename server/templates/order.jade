@@ -1,7 +1,57 @@
 html
-	body(style="width:6cm; font-size: 8px;")
-		h1 Tavolo #{table}
-		ul(style="list-style:none; margin:0; padding:0;")
-			each item in order
-				li= item.quantity + "x " + item.food.name
-				span(style="text-transform: uppercase; font-size: 6px")= item.note
+  style.
+    body {
+      margin: 0;
+      padding: 0 10px;
+      font-family: monospace, sans-serif;
+      width: 6cm;
+      font-size: 14px;
+    }
+    body header {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    body .order-coord {
+      font-style: italic;
+    }
+    body .flex1 {
+      flex: 1;
+    }
+    body ul {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+      width: 100%;
+    }
+    body li {
+      width: 100%;
+      margin-bottom: 3px;
+    }
+    body .col {
+      float: left;
+      width: 25px;
+    }
+    body .clearfix {
+      clear: both;
+    }
+    body .note {
+      text-indent: 15px;
+      text-transform: uppercase;
+    }
+    body .name {
+      width: 190px;
+      margin: 0 5px;
+    }
+  body
+    header La Cantinetta Reale
+    .order-coord Sala: #{room}
+    .order-coord Tavolo: #{table}
+    ul
+      each item in order
+        li
+          span.col.quantity= item.quantity + "x "
+          span.col.name.flex1= item.food.name
+            if item.note
+              .note= "- " + item.note
+          .clearfix
