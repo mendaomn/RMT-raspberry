@@ -17,11 +17,11 @@ exports.run = function(html, path, callback) {
         	// Page config
             page.set('paperSize', {
                 width: '6cm',
-                height: '7cm',
+                height: '12cm',
                 margin: {
                     top: '15px',
-                    left: '10px',
-                    right: '10px'
+                    left: '0px',
+                    right: '0px'
                 }
             });
             page.set('content', html);
