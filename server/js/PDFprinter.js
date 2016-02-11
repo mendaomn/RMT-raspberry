@@ -1,18 +1,19 @@
 // PDFprinter.js
 // Takes a file path and prints the file to default printer
 
-var printer = require('printer');
-var fs = require('fs');
+var printer = require( 'printer' );
+var fs = require( 'fs' );
 
-exports.print = function(filename) {
-    printer.printFile({
+exports.print = function( filename, printerName ) {
+    printer.printFile( {
+        printer: printerName,
         filename: filename,
-        success: function(jobID) {
-            console.log("ID: " + jobID);
+        success: function( jobID ) {
+            console.log( "ID: " + jobID );
         },
-        error: function(err) {
-            console.log('printer module error: ' + err);
-            throw err;
+        error: function( err ) {
+            console.log( 'printer module error: ' + err );
+            // throw err;
         }
-    });
+    } );
 };
