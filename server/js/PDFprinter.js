@@ -6,7 +6,7 @@ var fs = require( 'fs' );
 
 exports.print = function( filename, printerName ) {
     printer.printFile( {
-        printer: printerName,
+        printer: 'PDF',
         filename: filename,
         success: function( jobID ) {
             console.log( "ID: " + jobID );

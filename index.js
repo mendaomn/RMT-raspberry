@@ -20,9 +20,11 @@ var pdf = require( __dirname + '/server/js/pdf' );
 var pdfPrinter = require( __dirname + '/server/js/PDFprinter' );
 
 // Config
-var ORDER_TEMPLATE_PATH = __dirname + '/server/templates/order.jade';
+var ORDER_BAR_TEMPLATE_PATH = __dirname + '/server/templates/order_bar.jade';
+var ORDER_KITCHEN_TEMPLATE_PATH = __dirname + '/server/templates/order_kitchen.jade';
 var INVOICE_TEMPLATE_PATH = __dirname + '/server/templates/invoice.jade';
-var ORDERS_RENDERED_PATH = __dirname + '/server/orders';
+var ORDERS_BAR_RENDERED_PATH = __dirname + '/server/orders/bar';
+var ORDERS_KITCHEN_RENDERED_PATH = __dirname + '/server/orders/kitchen';
 var INVOICES_RENDERED_PATH = __dirname + '/server/invoices';
 var LOCAL_STORAGE_PATH = __dirname + '/server/storage';
 var KEYS_PATH = __dirname + '/server/keys';
@@ -33,7 +35,8 @@ var PRINTER_KITCHEN = 'Cucina';
 
 // Init
 var app = express();
-var renderOrder = jade.compileFile( ORDER_TEMPLATE_PATH );
+var renderBarOrder = jade.compileFile( ORDER_BAR_TEMPLATE_PATH );
+var renderKitchenOrder = jade.compileFile( ORDER_KITCHEN_TEMPLATE_PATH );
 var renderInvoice = jade.compileFile( INVOICE_TEMPLATE_PATH );
 
 
@@ -68,11 +71,13 @@ function printOrder( req, res ) {
     console.log( "Ready to print the following order:" );
     console.log( json );
     try {
-        var html = renderOrder( json ); // render template
+        var barHtml = renderBarOrder( json ); // render template
+        var kitchenHtml = renderKitchenOrder( json ); // render template
 
         // (html, path, callback) => generates a pdf from the HTML, saves it in path, call callback(filename)
         // as a callback, we print to default printer
-        pdf.run( html, ORDERS_RENDERED_PATH, fp_combine( printToBar, printToKitchen ) );
+        pdf.run( barHtml, ORDERS_BAR_RENDERED_PATH, printToBar );
+        pdf.run( kitchenHtml, ORDERS_KITCHEN_RENDERED_PATH, printToKitchen );
         // celebrate!
         res.type( 'text/plain' );
         res.send( 'Well done bro!' );
