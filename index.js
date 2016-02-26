@@ -71,13 +71,25 @@ function printOrder( req, res ) {
     console.log( "Ready to print the following order:" );
     console.log( json );
     try {
-        var barHtml = renderBarOrder( json ); // render template
-        var kitchenHtml = renderKitchenOrder( json ); // render template
+        var barHtml;
+        var kitchenHtml;
 
-        // (html, path, callback) => generates a pdf from the HTML, saves it in path, call callback(filename)
-        // as a callback, we print to default printer
-        pdf.run( barHtml, ORDERS_BAR_RENDERED_PATH, printToBar );
-        pdf.run( kitchenHtml, ORDERS_KITCHEN_RENDERED_PATH, printToKitchen );
+        // Print to bar only when needed
+        if ( json.order.filter( isDrink ).length ) {
+            barHtml = renderBarOrder( json ); // render template
+            // (html, path, callback) => saves pdf from html to path
+            // as a callback, print to Bar's printer
+            pdf.run( barHtml, ORDERS_BAR_RENDERED_PATH, printToBar );
+        }
+
+        // Print to kitchen only when needed
+        if ( json.order.filter( isFood ).length ) {
+            kitchenHtml = renderKitchenOrder( json ); // render template
+            // (html, path, callback) => saves pdf from html to path
+            // as a callback, print to Kitchen's printer
+            pdf.run( kitchenHtml, ORDERS_KITCHEN_RENDERED_PATH, printToKitchen );
+        }
+
         // celebrate!
         res.type( 'text/plain' );
         res.send( 'Well done bro!' );
@@ -92,10 +104,12 @@ function printInvoice( req, res ) {
     console.log( "Ready to print the following invoice:" );
     console.log( json );
     try {
-        var html = renderInvoice( json ); // render template
+        var html;
 
-        // (html, path, callback) => generates a pdf from the HTML, saves it in path, call callback(filename)
-        // as a callback, we print to default printer
+        html = renderInvoice( json ); // render template
+
+        // (html, path, callback) => saves pdf from html to path
+        // as a callback, print to Cashier's printer
         pdf.run( html, INVOICES_RENDERED_PATH, printToCashier );
 
         // Store locally for future analysis
@@ -185,6 +199,16 @@ function printToBar( filename ) {
 // UTILITY: print to kitchen
 function printToKitchen( filename ) {
     pdfPrinter.print( filename, PRINTER_KITCHEN );
+}
+
+// UTILITY: check whether item is food
+function isFood( item ) {
+    return item.menuType === 'foodMenu';
+}
+
+// UTILITY: check whether item is drink
+function isDrink( item ) {
+    return item.menuType === 'drinksMenu';
 }
 
 // FUNCTIONAL UTILITIES:

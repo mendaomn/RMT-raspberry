@@ -62,8 +62,6 @@ html
         li
           span.col.quantity= item.quantity + "x "
           span.col.name.flex1= item.food.name
-            if item.note
-              .note= "- " + item.note
           span.col.price= item.food.price + "€"
             if item.quantity > 1
               div= " x"+ item.quantity
