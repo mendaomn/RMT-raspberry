@@ -31,7 +31,7 @@ var KEYS_PATH = __dirname + '/server/keys';
 // Printer names
 var PRINTER_CASHIER = 'Bar';
 var PRINTER_BAR = 'Bar';
-var PRINTER_KITCHEN = 'Cucina';
+var PRINTER_KITCHEN = 'Bar';
 
 // Init
 var app = express();
