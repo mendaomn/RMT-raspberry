@@ -158,12 +158,12 @@ function isTodaysInvoice( invoice ) {
 
 // UTILITY: store locally
 function storeLocally( object ) {
-    var today = new Date();
-    var id = 'invoice_' + today.toLocaleString().replace( /\//g, '-' ).replace( / /g, '_' ) + '.json';
+    var orderDate = object.date.toLocaleString().replace( /\//g, '-' ).replace( / /g, '_' );
+    var id = 'invoice_' + orderDate + '.json';
     var filepath = LOCAL_STORAGE_PATH + '/' + id;
     var toBeStored = Object.assign( object );
 
-    toBeStored.date = today.toLocaleString();
+    toBeStored.date = orderDate;
 
     jsonfile.writeFile( filepath, toBeStored, function( err ) {
         console.error( err );
