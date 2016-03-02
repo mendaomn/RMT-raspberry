@@ -126,7 +126,7 @@ function printInvoice( req, res ) {
 // SERVICE: /today
 function getTodaysIncome( req, res ) {
     var income = readLocally()
-        .filter( isTodaysInvoice ) // is this invoice between 5am - 5am 
+        .filter( isTodaysInvoice ) // is this invoice between 5am - 5am
         .reduce( function( income, obj ) {
             return income + obj.total;
         }, 0 );
@@ -158,7 +158,7 @@ function isTodaysInvoice( invoice ) {
 
 // UTILITY: store locally
 function storeLocally( object ) {
-    var orderDate = object.date.toLocaleString().replace( /\//g, '-' ).replace( / /g, '_' );
+    var orderDate = object.date.replace( /\//g, '-' ).replace( / /g, '_' );
     var id = 'invoice_' + orderDate + '.json';
     var filepath = LOCAL_STORAGE_PATH + '/' + id;
     var toBeStored = Object.assign( object );
@@ -223,7 +223,7 @@ function fp_combine() {
     }
 }
 
-// MIDDLEWARE: print out to console every incoming request 
+// MIDDLEWARE: print out to console every incoming request
 function logger( req, res, next ) {
     console.log( req.method, req.url );
     next(); // Passing the request to the next handler in the stack.
