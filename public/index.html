@@ -2,76 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no,
 initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-    <title>RMT_v2</title>
-    <!-- MANIFEST -->
-    <link rel="manifest" href="manifest.json">
-    <!-- APPY-STYLE -->
-    <link rel="icon" type="image/png" href="assets/images/touch/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="assets/images/touch/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="assets/images/touch/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="assets/images/touch/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="assets/images/touch/favicon-16x16.png" sizes="16x16">
-    <meta name="theme-color" content="#e74c3c">
-    <!-- CSS LIBS -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/styles.min.css">
-    <!-- JS LIBS -->
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.min.js"></script>
-    <script src="bower_components/papaparse/papaparse.min.js"></script>
-    <!-- JS -->
-    <script src="scripts/main.min.js"></script>
-    <script src="scripts/templates.min.js"></script>
+	<title>RMT_v2</title>
+	<!-- MANIFEST -->
+	<link rel="manifest" href="manifest.json">
+	<!-- APPY-STYLE -->
+	<link rel="icon" type="image/png" href="assets/images/touch/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="assets/images/touch/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="assets/images/touch/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="assets/images/touch/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="assets/images/touch/favicon-16x16.png" sizes="16x16">
+	<meta name="theme-color" content="#e74c3c">
+	<!-- CSS LIBS -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="styles/styles.min.css">
+	<!-- JS LIBS -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+	<script src="bower_components/ngstorage/ngStorage.min.js" charset="utf-8"></script>
+	<script src="bower_components/papaparse/papaparse.min.js"></script>
+	<!-- JS -->
+	<script src="scripts/main.min.js"></script>
+	<script src="scripts/templates.min.js"></script>
 </head>
 
 <body ng-app="RMT" ng-controller="RMTCtrl">
-    <div ng-show="false" class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <span ng-show="appstate.canGoBack" class="btn btn-default glyphicon glyphicon-chevron-left" ng-click="appstate.goBack()"></span>
-                <span ng-show="appstate.order" class="btn btn-default pull-right glyphicon glyphicon-list" ng-click="appstate.setView('order')"></span>
-            </div>
-        </div>
-    </div>
-    <nav class="nav-fixed">
-        <div ng-style="{'visibility': appstate.canGoBack?'visible':'hidden'}" class="nav-list-item glyphicon glyphicon-chevron-left" ng-click="appstate.goBack()"></div>
-        <ul class="nav-list">
-            <li class="nav-list-item" ng-show="appstate.currentView == 'table-selection'" ng-click="appstate.setView('new-order')">
-                <div class="glyphicon glyphicon-plus"></div>
-            </li>
-            <li class="nav-list-item" ng-show="appstate.order" ng-click="appstate.setView('order')">
-                <div class="glyphicon glyphicon-list"></div>
-            </li>
-            <li class="nav-list-item" ng-click="appstate.setView('table-selection')">
-                <div class="glyphicon glyphicon-home"></div>
-            </li>
-        </ul>
-    </nav>
-    <div class="main-content">
-        <ng-include src="appstate.currentView+'.html'"></ng-include>
-    </div>
-    <!-- LIBS NON-BLOCKING -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- SERVICE WORKER -->
-    <script>
-    // if ('serviceWorker' in navigator) {
-    //     navigator.serviceWorker.register('/sw.js', {
-    //             scope: '/'
-    //         })
-    //         .then(function(registration) {
-    //             console.log("Service Worker Registered");
-    //         });
+	<div ng-show="false" class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<span ng-show="appstate.canGoBack" class="btn btn-default glyphicon glyphicon-chevron-left" ng-click="appstate.goBack()"></span>
+				<span ng-show="appstate.order" class="btn btn-default pull-right glyphicon glyphicon-list" ng-click="appstate.setView('order')"></span>
+			</div>
+		</div>
+	</div>
+	<nav class="nav-fixed">
+		<div ng-style="{'visibility': appstate.canGoBack?'visible':'hidden'}" class="nav-list-item glyphicon glyphicon-chevron-left" ng-click="appstate.goBack()"></div>
+		<ul class="nav-list">
+			<li class="nav-list-item" ng-show="appstate.currentView == 'table-selection'" ng-click="appstate.setView('new-order')">
+				<div class="glyphicon glyphicon-plus"></div>
+			</li>
+			<li class="nav-list-item" ng-show="appstate.order" ng-click="appstate.setView('order')">
+				<div class="glyphicon glyphicon-list"></div>
+			</li>
+			<li class="nav-list-item" ng-click="appstate.setView('table-selection')">
+				<div class="glyphicon glyphicon-home"></div>
+			</li>
+		</ul>
+	</nav>
+	<div class="main-content">
+		<ng-include src="appstate.currentView+'.html'"></ng-include>
+	</div>
+	<!-- LIBS NON-BLOCKING -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- SERVICE WORKER -->
+	<script>
+		// if ('serviceWorker' in navigator) {
+		//     navigator.serviceWorker.register('/sw.js', {
+		//             scope: '/'
+		//         })
+		//         .then(function(registration) {
+		//             console.log("Service Worker Registered");
+		//         });
 
-    //     navigator.serviceWorker.ready.then(function(registration) {
-    //         console.log("Service Worker Ready");
-    //     });
-    // }
-    </script>
+		//     navigator.serviceWorker.ready.then(function(registration) {
+		//         console.log("Service Worker Ready");
+		//     });
+		// }
+	</script>
 </body>
 
 </html>
