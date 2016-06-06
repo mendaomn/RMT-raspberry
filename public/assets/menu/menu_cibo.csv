@@ -1,4 +1,5 @@
 Pizze;;;;;;;
+<<<<<<< HEAD
 Piz-Margherita;5;;;;;;
 Piz-Acciughina;6;;;;;;
 Piz-Acetina;7;;;;;;
@@ -31,6 +32,39 @@ Foc-Padano;7;;;;;;
 Foc-Emiliana;7;;;;;;
 Foc-Delizia dell'orto;8;;;;;;
 Piz-Zucchine e crudo;7;;;;;;
+=======
+Margherita;5;;;;;;
+Acciughina;6;;;;;;
+Acetina;7;;;;;;
+Bufala;7;;;;;;
+Bismark;7;;;;;;
+Cantinetta;7;;;;;;
+Country;7;;;;;;
+Formaggi;6;;;;;;
+FunghiSalsi;8;;;;;;
+GorgoCipo;6;;;;;;
+Greca;6;;;;;;
+Ligure;6;;;;;;
+Parmigiana;7;;;;;;
+Piccantina;6;;;;;;
+Porcini;8;;;;;;
+Prosciutto;6;;;;;;
+Rustica;7;;;;;;
+Salsiccia;6;;;;;;
+SalsiCipo;6;;;;;;
+SalsiFria;7;;;;;;
+Trentina;7;;;;;;
+Vegetariana;6;;;;;;
+Venariese;7;;;;;;
+Wurstel;6;;;;;;
+Padano;7;;;;;;
+Romana;7;;;;;;
+Pugliese;7;;;;;;
+Emiliana;7;;;;;;
+Fume';7;;;;;;
+Genovese;7;;;;;;
+Delizia dell'orto;8;;;;;;
+>>>>>>> d19a68baa6e8ca5eb55c4a605a3ed0989ea2b66d
 Rinforzi  ;1;;;;;;
 ;;;;;;;
 Antipasti;;;;;;;
@@ -55,9 +89,14 @@ Spaghetti Cantinetta; 9 ;;;;;;
 Maccheroni Norma; 9 ;;;;;;
 Orecchiette; 9 ;;;;;;
 Secondi;;;;;;;
+<<<<<<< HEAD
 Cotoletta Milanese; 10 ;;;;;;
 Fagottino Barbera; 9 ;;;;;;
 Arrosticini ; 12 ;;;;;;
+=======
+Spiedoni ; 10 ;;;;;;
+Arrosticini ; 10 ;;;;;;
+>>>>>>> d19a68baa6e8ca5eb55c4a605a3ed0989ea2b66d
 Grigliata Mista; 17 ;;;;;;
 Rustichella Pollo; 9 ;;;;;;
  ;   ;;;;;;
@@ -102,7 +141,6 @@ Lavagna 10; 10 ;;;;;;
 Lavagna 12; 12 ;;;;;;
 Lavagna 13; 13 ;;;;;;
 Lavagna 14; 14 ;;;;;;
-Lavagna 5; 5 ;;;;;;
 Lavagna 15; 15 ;;;;;;
 Panini;;;;;;;
 House  ( pane fatto in casa); 11 ;;;;;;
