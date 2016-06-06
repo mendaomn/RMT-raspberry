@@ -113,7 +113,7 @@ initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 					<ul class="list-group">
 						<li class="list-group-item flex flex-align-center flex-between" ng-repeat="item in data.days.income">
 							{{item.name}}
-							<div class="statValue">{{item.value + ' €'}}</div>
+							<div class="statValue">{{item.value | limitTo: 5}} €</div>
 						</li>
 					</ul>
 				</div>
@@ -135,7 +135,7 @@ initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 					<ul class="list-group">
 						<li class="list-group-item flex flex-align-center flex-between" ng-repeat="item in data.days.ordersCount">
 							{{item.name}}
-							<div class="statValue">{{item.value}}</div>
+							<div class="statValue">{{item.value | limitTo:4}}</div>
 						</li>
 					</ul>
 				</div>
