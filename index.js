@@ -18,6 +18,7 @@ var bodyParser = require( "body-parser" );
 var jade = require( "jade" );
 var pdf = require( __dirname + "/server/js/pdf" );
 var pdfPrinter = require( __dirname + "/server/js/PDFprinter" );
+var analytics = require( __dirname + "/server/js/analytics");
 
 // Config
 var ORDER_BAR_TEMPLATE_PATH = __dirname + "/server/templates/order_bar.jade";
@@ -56,6 +57,7 @@ app.use( bodyParser.json() );
 app.post( "/printOrder", printOrder );
 app.post( "/printInvoice", printInvoice );
 app.get( "/today", getTodaysIncome );
+app.get( "/analytics", getAnalytics );
 
 // Listen on provided PORT, fallback to port 55555
 // app.listen(process.env.PORT || 3000);
@@ -126,6 +128,12 @@ function printInvoice( req, res ) {
   }
 }
 
+// SERVICE: /analytics
+function getAnalytics( req, res ) {
+  res.type( "text/plain" );
+  res.send( analytics.getStats() );
+}
+
 // SERVICE: /today
 function getTodaysIncome( req, res ) {
   var income = readLocally()
@@ -155,8 +163,10 @@ function isTodaysInvoice( invoice ) {
   if ( invoiceDateString === todayDateString ) {
     return ( todayHours < 5 ) && ( invoiceHours < 5 ) ||
       ( todayHours >= 5 ) && ( invoiceHours >= 5 );
-  } else if ( invoiceDate.getYear() === today.getYear() && invoiceDate.getMonth() === today.getMonth() ) {
-    return ( todayHours < 5 ) && ( invoiceHours >= 5 ) && ( today.getDay() === invoiceDate.getDay() - 1 );
+  } else if ( invoiceDate.getYear() === today.getYear() &&
+    invoiceDate.getMonth() === today.getMonth() ) {
+    return ( todayHours < 5 ) && ( invoiceHours >= 5 ) &&
+    ( today.getDay() === invoiceDate.getDay() - 1 );
   }
 }
 
@@ -230,5 +240,6 @@ function fpCombine() {
 // MIDDLEWARE: print out to console every incoming request
 function logger( req, res, next ) {
   console.log( req.method, req.url );
-  next(); // Passing the request to the next handler in the stack.
+  // Passing the request to the next handler in the stack.
+  next();
 }
