@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no,
+initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<title>RMT_v2</title>
+	<!-- MANIFEST -->
+	<link rel="manifest" href="manifest.json">
+	<!-- APPY-STYLE -->
+	<link rel="icon" type="image/png" href="assets/images/touch/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="assets/images/touch/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="assets/images/touch/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="assets/images/touch/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="assets/images/touch/favicon-16x16.png" sizes="16x16">
+	<meta name="theme-color" content="#e74c3c">
+	<!-- CSS LIBS -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="styles/styles.min.css">
+	<!-- JS LIBS -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<!-- JS -->
+	<script src="scripts/stats.min.js"></script>
+</head>
+
+<body ng-app="StatsApp" ng-controller="StatsCtrl">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">Ultimi incassi</h2>
+					<ul class="list-group">
+						<li class="list-group-item flex flex-align-center flex-between" ng-repeat="item in data.pastDays">
+							{{item.name}}
+							<div class="statValue">{{item.count}}</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">Incasso totale</h2>
+					<h3 class="statValue">
+						{{data.totals.income + ' €'}}
+					</h3>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">Scontrino medio</h2>
+					<h3 class="statValue">
+						{{data.totals.ordersAvg | limitTo:5}} €
+					</h3>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">Numero scontrini</h2>
+					<h3 class="statValue">
+						{{data.totals.ordersCount}}
+					</h3>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">I più venduti</h2>
+					<ul class="list-group">
+						<li class="list-group-item flex flex-align-center flex-between" ng-repeat="item in data.mostSold" ng-if="item.count > 9">
+							{{item.name}}
+							<div class="statValue">{{item.count}}</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">Incasso mensile</h2>
+					<ul class="list-group">
+						<li class="list-group-item flex flex-align-center flex-between" ng-repeat="item in data.months.income">
+							{{item.name}}
+							<div class="statValue">{{item.value + ' €'}}</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">Scontrino medio mensile</h2>
+					<ul class="list-group">
+						<li class="list-group-item flex flex-align-center flex-between" ng-repeat="item in data.months.ordersAvg">
+							{{item.name}}
+							<div class="statValue">{{item.value | limitTo:5}} €</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">Numero scontrini mensile</h2>
+					<ul class="list-group">
+						<li class="list-group-item flex flex-align-center flex-between" ng-repeat="item in data.months.ordersCount">
+							{{item.name}}
+							<div class="statValue">{{item.value}}</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">Incasso per giorno della settimana</h2>
+					<ul class="list-group">
+						<li class="list-group-item flex flex-align-center flex-between" ng-repeat="item in data.days.income">
+							{{item.name}}
+							<div class="statValue">{{item.value + ' €'}}</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">Scontrino medio per giorno della settimana</h2>
+					<ul class="list-group">
+						<li class="list-group-item flex flex-align-center flex-between" ng-repeat="item in data.days.ordersAvg">
+							{{item.name}}
+							<div class="statValue">{{item.value | limitTo:5}} €</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="stat">
+					<h2 class="statTitle">Numero scontrini per giorno della settimana</h2>
+					<ul class="list-group">
+						<li class="list-group-item flex flex-align-center flex-between" ng-repeat="item in data.days.ordersCount">
+							{{item.name}}
+							<div class="statValue">{{item.value}}</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- LIBS NON-BLOCKING -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

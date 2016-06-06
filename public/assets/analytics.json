@@ -1,0 +1,574 @@
+{
+  "totals": {
+    "income": 14579,
+    "ordersAvg": 41.65428571428571,
+    "ordersCount": 350
+  },
+  "months": {
+    "income": {
+      "1": 372.5,
+      "2": 4554.5,
+      "3": 5540.5,
+      "4": 4111.5
+    },
+    "ordersCount": {
+      "1": 11,
+      "2": 110,
+      "3": 127,
+      "4": 102
+    },
+    "ordersAvg": {
+      "1": 33.86363636363637,
+      "2": 41.404545454545456,
+      "3": 43.625984251968504,
+      "4": 40.30882352941177
+    }
+  },
+  "days": {
+    "income": {
+      "0": 272,
+      "2": 93.11111111111111,
+      "3": 109.95454545454545,
+      "4": 136.28571428571428,
+      "5": 279.96153846153845,
+      "6": 286.15384615384613
+    },
+    "ordersCount": {
+      "0": 6.5,
+      "2": 2.5555555555555554,
+      "3": 3.727272727272727,
+      "4": 3.4285714285714284,
+      "5": 5.769230769230769,
+      "6": 6.538461538461538
+    },
+    "ordersAvg": {
+      "0": 41.84615384615385,
+      "2": 36.434782608695656,
+      "3": 29.5,
+      "4": 39.75,
+      "5": 48.526666666666664,
+      "6": 43.76470588235294
+    }
+  },
+  "mostSold": [ {
+    "name": "Caffe",
+    "count": 252
+  }, {
+    "name": "Lavagna 4",
+    "count": 211
+  }, {
+    "name": "Cocacola         ",
+    "count": 98
+  }, {
+    "name": "Baffo D'oro 40cl",
+    "count": 85
+  }, {
+    "name": "Acqua   nat 0,50 lt",
+    "count": 70
+  }, {
+    "name": "Baffo D'oro 20 cl",
+    "count": 64
+  }, {
+    "name": "Martin's Rossa     40 cl          ",
+    "count": 64
+  }, {
+    "name": "Acqua   nat litro",
+    "count": 63
+  }, {
+    "name": "Acqua gas 0,50 lt",
+    "count": 59
+  }, {
+    "name": "Lavagna 10",
+    "count": 52
+  }, {
+    "name": "Amari",
+    "count": 50
+  }, {
+    "name": "Piz-Margherita",
+    "count": 43
+  }, {
+    "name": "Grigliata Mista",
+    "count": 41
+  }, {
+    "name": "M-Hamburger fassona",
+    "count": 37
+  }, {
+    "name": "Lavagna 9",
+    "count": 37
+  }, {
+    "name": "Agnolotti al traminer",
+    "count": 34
+  }, {
+    "name": "Martin's Rossa  20 cl                ",
+    "count": 34
+  }, {
+    "name": "Rinforzi  ",
+    "count": 33
+  }, {
+    "name": "EstaThe (limone, pesca)",
+    "count": 28
+  }, {
+    "name": "Gnocchi ai formaggi",
+    "count": 28
+  }, {
+    "name": "Cantinetti e fond",
+    "count": 27
+  }, {
+    "name": "Tagliere crudo",
+    "count": 26
+  }, {
+    "name": "Pig'B",
+    "count": 25
+  }, {
+    "name": "Patatine fritte",
+    "count": 24
+  }, {
+    "name": "Acqua  gas litro",
+    "count": 23
+  }, {
+    "name": "Cantinetti",
+    "count": 23
+  }, {
+    "name": "Brusc-Pom e orig",
+    "count": 20
+  }, {
+    "name": "M-Rustichella",
+    "count": 20
+  }, {
+    "name": "Lavagna 14",
+    "count": 20
+  }, {
+    "name": "Spiedoni ",
+    "count": 20
+  }, {
+    "name": "Lavagna 8",
+    "count": 20
+  }, {
+    "name": "Lavagna 5",
+    "count": 20
+  }, {
+    "name": "M-Hamburger bufalo",
+    "count": 19
+  }, {
+    "name": "Cantinetti & nutella",
+    "count": 19
+  }, {
+    "name": "Tagliatelle asp e gamb",
+    "count": 18
+  }, {
+    "name": "Tajabosc",
+    "count": 18
+  }, {
+    "name": "Troccoli",
+    "count": 18
+  }, {
+    "name": "House  ( pane fatto in casa)",
+    "count": 17
+  }, {
+    "name": "Arrosticini ",
+    "count": 17
+  }, {
+    "name": "M-Vegetariano",
+    "count": 16
+  }, {
+    "name": "Rosso 1/2 lt",
+    "count": 15
+  }, {
+    "name": "Masca",
+    "count": 15
+  }, {
+    "name": "Rosso Calice",
+    "count": 15
+  }, {
+    "name": "Patatine fritte del re",
+    "count": 15
+  }, {
+    "name": "Bianco 1/2 lt",
+    "count": 15
+  }, {
+    "name": "Rosso 1/4 lt",
+    "count": 14
+  }, {
+    "name": "Grappa barriche gialla",
+    "count": 14
+  }, {
+    "name": "Gnocchi Rag�/mis fung",
+    "count": 14
+  }, {
+    "name": "Burger",
+    "count": 14
+  }, {
+    "name": "Onion'b",
+    "count": 13
+  }, {
+    "name": "Caffe Deca",
+    "count": 13
+  }, {
+    "name": "Paulaner hefe                                               ",
+    "count": 13
+  }, {
+    "name": "Franziskaner  rossa ",
+    "count": 13
+  }, {
+    "name": "Gorgo'B",
+    "count": 13
+  }, {
+    "name": "Franziskaner Bionda               ",
+    "count": 13
+  }, {
+    "name": "Piz-Bufala",
+    "count": 13
+  }, {
+    "name": "Signoria",
+    "count": 13
+  }, {
+    "name": "Piz-Zucchine e crudo",
+    "count": 12
+  }, {
+    "name": "Foc-Delizia dell'orto",
+    "count": 12
+  }, {
+    "name": "Cocacola   Zero      ",
+    "count": 12
+  }, {
+    "name": "Desperados",
+    "count": 12
+  }, {
+    "name": "Piz-Piccantina",
+    "count": 12
+  }, {
+    "name": "Piz-Vegetariana",
+    "count": 12
+  }, {
+    "name": "Limoncello",
+    "count": 12
+  }, {
+    "name": "Hot Dog",
+    "count": 11
+  }, {
+    "name": "Piz-Salsiccia",
+    "count": 11
+  }, {
+    "name": "Focaccia alla nutella",
+    "count": 11
+  }, {
+    "name": "Piz-Rustica",
+    "count": 10
+  }, {
+    "name": "Piz-Prosciutto",
+    "count": 10
+  }, {
+    "name": "Erdinger                           ",
+    "count": 10
+  }, {
+    "name": "Bianco Calice",
+    "count": 9
+  }, {
+    "name": "Piz-Acciughina",
+    "count": 9
+  }, {
+    "name": "Foc-Crudo",
+    "count": 9
+  }, {
+    "name": "Tennent`s Super                 ",
+    "count": 9
+  }, {
+    "name": "Cantinetti e Gorgo",
+    "count": 9
+  }, {
+    "name": "Lavagna 13",
+    "count": 9
+  }, {
+    "name": "Piz-Venariese",
+    "count": 9
+  }, {
+    "name": "Grappa Candolini Bianca",
+    "count": 9
+  }, {
+    "name": "Piz-FunghiSalsi",
+    "count": 9
+  }, {
+    "name": "Piatto dell'estate",
+    "count": 9
+  }, {
+    "name": "Piz-Trentina",
+    "count": 9
+  }, {
+    "name": "Ceres ",
+    "count": 9
+  }, {
+    "name": "PANACHE'   40 cl",
+    "count": 8
+  }, {
+    "name": "Piz-Cantinetta",
+    "count": 8
+  }, {
+    "name": "Pata'B",
+    "count": 8
+  }, {
+    "name": "Brusc-La bufala",
+    "count": 8
+  }, {
+    "name": "Agricula",
+    "count": 8
+  }, {
+    "name": "The e Tisane     ",
+    "count": 8
+  }, {
+    "name": "Piz-Ligure",
+    "count": 8
+  }, {
+    "name": "Foc-Padano",
+    "count": 8
+  }, {
+    "name": "Sapori d'italia",
+    "count": 8
+  }, {
+    "name": "PANACHE'   20 cl",
+    "count": 8
+  }, {
+    "name": "Piz-SalsiFria",
+    "count": 8
+  }, {
+    "name": "Corona Extra                                     ",
+    "count": 7
+  }, {
+    "name": "Domus Patris 33 CL",
+    "count": 7
+  }, {
+    "name": "Lemonsoda",
+    "count": 7
+  }, {
+    "name": "Lavagna 7",
+    "count": 7
+  }, {
+    "name": "Domus Patris 75 CL",
+    "count": 7
+  }, {
+    "name": "Foc-Emiliana",
+    "count": 7
+  }, {
+    "name": "Piz-Porcini",
+    "count": 7
+  }, {
+    "name": "Fagioli toma pesto ",
+    "count": 7
+  }, {
+    "name": "Zedda Piras Mirto",
+    "count": 7
+  }, {
+    "name": "Orecchiette",
+    "count": 7
+  }, {
+    "name": "Festum 75 CL",
+    "count": 6
+  }, {
+    "name": "Caffe Orzo",
+    "count": 6
+  }, {
+    "name": "Ilia 33 CL",
+    "count": 6
+  }, {
+    "name": "Guinness                                  ",
+    "count": 6
+  }, {
+    "name": "Piz-Wurstel",
+    "count": 6
+  }, {
+    "name": "Castanea 75 CL",
+    "count": 6
+  }, {
+    "name": "Filetto di maiale",
+    "count": 5
+  }, {
+    "name": "Piz-Greca",
+    "count": 5
+  }, {
+    "name": "Piz-Country",
+    "count": 5
+  }, {
+    "name": "Piz-Formaggi",
+    "count": 5
+  }, {
+    "name": "Cotto",
+    "count": 5
+  }, {
+    "name": "Tenebra",
+    "count": 5
+  }, {
+    "name": "Ilia",
+    "count": 5
+  }, {
+    "name": "Brusc-Salsiccia",
+    "count": 4
+  }, {
+    "name": "Piz-Bismark",
+    "count": 4
+  }, {
+    "name": "Foc-Cotto",
+    "count": 4
+  }, {
+    "name": "Cioccolata",
+    "count": 4
+  }, {
+    "name": "Fumificus",
+    "count": 4
+  }, {
+    "name": "Bianco 1/4 lt",
+    "count": 4
+  }, {
+    "name": "Sprite",
+    "count": 4
+  }, {
+    "name": "Genepi ",
+    "count": 4
+  }, {
+    "name": "Ilia 75 CL",
+    "count": 4
+  }, {
+    "name": "Caffe corretto",
+    "count": 4
+  }, {
+    "name": "M-filetto di maiale",
+    "count": 4
+  }, {
+    "name": "Guardia",
+    "count": 4
+  }, {
+    "name": "Antipasto Vegan",
+    "count": 4
+  }, {
+    "name": "Castanea",
+    "count": 3
+  }, {
+    "name": "Salsiccia  gorgo  radicchio",
+    "count": 3
+  }, {
+    "name": "RUSSA        20 cl",
+    "count": 3
+  }, {
+    "name": "ISTRIANA     20 cl",
+    "count": 3
+  }, {
+    "name": "Fumificus 75 CL",
+    "count": 3
+  }, {
+    "name": "Piz-Acetina",
+    "count": 3
+  }, {
+    "name": "Piz-GorgoCipo",
+    "count": 3
+  }, {
+    "name": "Festum",
+    "count": 3
+  }, {
+    "name": "Foc-Genovese",
+    "count": 3
+  }, {
+    "name": "Fanta Aranciata",
+    "count": 3
+  }, {
+    "name": "SANPATRIZIO   40 cl",
+    "count": 3
+  }, {
+    "name": "ISTRIANA     40 cl",
+    "count": 3
+  }, {
+    "name": "Marocchino Nut",
+    "count": 3
+  }, {
+    "name": "Domus Filius 75 CL",
+    "count": 2
+  }, {
+    "name": "Domus Patris",
+    "count": 2
+  }, {
+    "name": "Prosciutto cotto e mozza",
+    "count": 2
+  }, {
+    "name": "Frumentum 75 CL",
+    "count": 2
+  }, {
+    "name": "Baffo D'oro litro",
+    "count": 2
+  }, {
+    "name": "Brusc-Parma",
+    "count": 2
+  }, {
+    "name": "Menda'B",
+    "count": 2
+  }, {
+    "name": "Cannonau              ",
+    "count": 2
+  }, {
+    "name": "Piz-SalsiCipo",
+    "count": 2
+  }, {
+    "name": "Piz-Parmigiana",
+    "count": 2
+  }, {
+    "name": "SANPATRIZIO  20 cl",
+    "count": 2
+  }, {
+    "name": "Broccoli cip speck e strac",
+    "count": 2
+  }, {
+    "name": "Pollo alla cacciatora",
+    "count": 2
+  }, {
+    "name": "Brusc-Gamberi",
+    "count": 2
+  }, {
+    "name": "Dolcetto Dogliani",
+    "count": 2
+  }, {
+    "name": "Lavagna 12",
+    "count": 2
+  }, {
+    "name": "Martin's Rossa  litro              ",
+    "count": 2
+  }, {
+    "name": "Foc-Fume'",
+    "count": 2
+  }, {
+    "name": "Funghi champ  sals  ciliegini",
+    "count": 1
+  }, {
+    "name": "Marocchino Nut/panna",
+    "count": 1
+  }, {
+    "name": "Primitivo Manduria ",
+    "count": 1
+  }, {
+    "name": "Bonarda ",
+    "count": 1
+  }, {
+    "name": "Grappa Gratacul ",
+    "count": 1
+  }, {
+    "name": "Ribolla Extra Dry",
+    "count": 1
+  }, {
+    "name": "Baileys",
+    "count": 1
+  }, {
+    "name": "Cioccolata panna",
+    "count": 1
+  }, {
+    "name": "FunghiSalsi",
+    "count": 1
+  }, {
+    "name": "Salsiccia e fondutina",
+    "count": 1
+  }, {
+    "name": "SalsiFria",
+    "count": 1
+  }, {
+    "name": "Sambuca Molinari",
+    "count": 1
+  } ],
+  "pastDays": {
+    "oggi": 88,
+    "ieri": 117.5
+  }
+}
